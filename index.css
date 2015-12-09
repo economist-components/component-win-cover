@@ -1,0 +1,130 @@
+
+
+
+.win-cover {
+  max-width: 1190px;
+  margin: 0;
+}
+
+.win-cover--imagecontainer {
+  max-width: 1190px;
+  max-height: 624px;
+  background-color: grey;
+}
+
+.win-cover--imagecontainer > img {
+  display: none;
+}
+
+.win-cover--imagecontainer > .desktopImage--selected {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.win-cover--bodyCopy {
+  max-width: 1190px;
+  max-height: 624px;
+  background-color: grey;
+}
+
+.win-cover--bodyCopy > div {
+  display: none;
+  padding: 20px;
+}
+
+.win-cover--bodyCopy > .bodyCopy--selected {
+  display: block;
+}
+
+.bodyCopy--selected p {
+  line-height: 30px;
+  color: #fff;
+}
+
+.bodyCopy--selected h2 {
+  font-weight: bold;
+  color: #fff;
+}
+
+
+#scrollcontainer{
+  width: 320px;
+  background-color: grey;
+  flex: 24;
+}
+
+.pager {
+  width: 100%;
+  max-width: 1190px;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  max-height: 48px;
+}
+
+.pager-previous,
+.pager-next {
+  cursor: pointer;
+  width: 40px;
+  height: 48px;
+  min-width: 40px;
+  background-color: grey;
+  flex: 1;
+}
+
+.pager-previous {
+  border-right: 1px solid #fff;
+}
+
+.pager-next {
+  border-left: 1px solid #fff;
+}
+
+.pager-previous svg,
+.pager-next svg {
+ width: 30px;
+ height: 30px;
+ margin: 8px;
+ fill: #555;
+}
+
+.pager-arrow-hidden {
+  opacity: 0.2;
+}
+
+.pager--inner {
+  width: 150vw;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.pager--inner li {
+  padding: 0;
+  margin:0;
+  cursor: pointer;
+  list-style: none;
+  min-height: 48px;
+  height: 100%;
+  border-right: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pager--inner li:last-child {
+  border: 0;
+}
+
+.pager--inner li div,
+.pagerIndex--selected {
+  text-align: center;
+  padding-top: 16px;
+  color: #fff;
+}
+
+.pagerIndex--selected {
+  flex: 1;
+  background-color: #555;
+}
