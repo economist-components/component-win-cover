@@ -1,7 +1,6 @@
 import WinCover from './index.es6';
 import React from 'react';
 
-
 const entries = [
   {
     tabtitle: '2000',
@@ -18,7 +17,7 @@ const entries = [
   {
     tabtitle: '2015',
     title: '01',
-    image: 'images/13.png',
+    image: 'assets/13.png',
     bodycopy: `<h2>Unfinished business for the world's women</h2>
     <p>
     In 2016 Hillary Clinton could become the first woman to lead the
@@ -32,7 +31,7 @@ const entries = [
   {
     tabtitle: '2014',
     title: '02',
-    image: 'images/24.png',
+    image: 'assets/24.png',
     bodycopy: `<h2>The Great War</h2>
     <p>
     For the centenary of the outbreak of the first world war in 1914, the only
@@ -45,7 +44,7 @@ const entries = [
   {
     tabtitle: '2013',
     title: '03',
-    image: 'images/30.png',
+    image: 'assets/30.png',
     bodycopy: `<h2>The lottery of life</h2>
     <p>
     <i>In The World in 1988</i>, The Economist Intelligence Unit (EIU) ranked 50 countries according
@@ -59,7 +58,7 @@ const entries = [
   {
     tabtitle: '2012',
     title: '04',
-    image: 'images/28.png',
+    image: 'assets/28.png',
     bodycopy: `<h2>Sharing to the power of 2012</h2>
     <p>
     Sheryl Sandberg, chief operating officer of Facebook, predicted that social
@@ -72,7 +71,7 @@ const entries = [
   {
     tabtitle: '2011',
     title: '05',
-    image: 'images/19.png',
+    image: 'assets/19.png',
     bodycopy: `<h2>Another year, another billion</h2>
     <p>
     The world's population was expected to reach seven billion in 2011. The
@@ -87,7 +86,7 @@ const entries = [
   {
     tabtitle: '2010',
     title: '06',
-    image: 'images/02.png',
+    image: 'assets/02.png',
     bodycopy: `<h2>Space, the fiscal frontier</h2>
     <p>
     Space may well be the final frontier for disruption. In The World in 2010
@@ -101,7 +100,7 @@ const entries = [
   {
     tabtitle: '2009',
     title: '07',
-    image: 'images/31.png',
+    image: 'assets/31.png',
     bodycopy: `<h2>About 2008: sorry</h2>
     <p>
     The financial crisis of 2008 caught everyone by surprise—not least, it must
@@ -116,7 +115,7 @@ const entries = [
   {
     tabtitle: '2008',
     title: '08',
-    image: 'images/18.png',
+    image: 'assets/18.png',
     bodycopy: `<h2>007 in 008</h2>
     <p>
     James Bond, the debonair, fictional creation of Ian Fleming, had much to
@@ -131,7 +130,7 @@ const entries = [
   {
     tabtitle: '2007',
     title: '09',
-    image: 'images/19.png',
+    image: 'assets/19.png',
     bodycopy: `<h2>Work-life imbalance</h2>
     <p>
     In the 1990s a wonderful new way of working beckoned: a world where it would
@@ -146,7 +145,7 @@ const entries = [
   {
     tabtitle: '2006',
     title: '10',
-    image: 'images/32.png',
+    image: 'assets/32.png',
     bodycopy: `<h2>Looking back on the future</h2>
     <p>
     For The World In...'s 20th edition, we invited an historian, Niall Ferguson, to take a critical look at our record
@@ -157,7 +156,7 @@ const entries = [
   {
     tabtitle: '2005',
     title: '11',
-    image: 'images/05.png',
+    image: 'assets/05.png',
     bodycopy: `<h2>The age of phonography</h2>
     <p>
     In 2004 digital cameras outsold film cameras for the first time—but both
@@ -172,7 +171,7 @@ const entries = [
   {
     tabtitle: '2004',
     title: '12',
-    image: 'images/08.png',
+    image: 'assets/08.png',
     bodycopy: `<h2>A new impetus for old Europe</h2>
     <p>
     The enlargement of the European Union in 2004 was the biggest single
@@ -185,7 +184,7 @@ const entries = [
   {
     tabtitle: '2003',
     title: '13',
-    image: 'images/13.png',
+    image: 'assets/13.png',
     bodycopy: `<h2>As safe as houses?</h2>
     <p>
     The rise in property prices in many cities across the world made ordinary
@@ -199,7 +198,7 @@ const entries = [
   {
     tabtitle: '2002',
     title: '14',
-    image: 'images/29.png',
+    image: 'assets/29.png',
     bodycopy: `<h2>Europe's day of change</h2>
     <p>
     The first euro coins and notes started circulating on New Year's Day, 2002.
@@ -213,7 +212,7 @@ const entries = [
   {
     tabtitle: '2001',
     title: '15',
-    image: 'images/09.png',
+    image: 'assets/09.png',
     bodycopy: `<h2>Where's the world's worst?</h2>
     <p>
     There are many dismal places in which to live, but in 2001 The Economist
@@ -227,7 +226,7 @@ const entries = [
   {
     tabtitle: '2000',
     title: '16',
-    image: 'images/33.png',
+    image: 'assets/33.png',
     bodycopy: `<h2>Can e-commerce deliver?</h2>
     <p>
     Peter Drucker, the grandee of management science, took an early look at the disruptive power of e-commerce.
@@ -238,7 +237,7 @@ const entries = [
   {
     tabtitle: '1999',
     title: '17',
-    image: 'images/22.png',
+    image: 'assets/22.png',
     bodycopy: `<h2>The empire of democracy</h2>
     <p>
     NATO's first, tentative intervention in Kosovo in 1998 defied prevailing rules
@@ -252,7 +251,7 @@ const entries = [
   {
     tabtitle: '1998',
     title: '18',
-    image: 'images/03.png',
+    image: 'assets/03.png',
     bodycopy: `<h2>The Web lifestyle</h2>
     <p>
     Writing for The World in 1998, Microsoft's chairman. Bill Gates, forecast
@@ -265,7 +264,7 @@ const entries = [
   {
     tabtitle: '1997',
     title: '19',
-    image: 'images/14.png',
+    image: 'assets/14.png',
     bodycopy: `<h2>Hong Kong, July 1st</h2>
     <p>
     On June 30th 1997 Britain handed Hong Kong back to China. In The World in 1997,
@@ -278,7 +277,7 @@ const entries = [
   {
     tabtitle: '1996',
     title: '20',
-    image: 'images/20.png',
+    image: 'assets/20.png',
     bodycopy: `<h2>A Labour Britain's promise</h2>
     <p>
     The World in 1996 asked Tony Blair, then Britain's opposition leader, to spell
@@ -290,7 +289,7 @@ const entries = [
   {
     tabtitle: '1995',
     title: '21',
-    image: 'images/06.png',
+    image: 'assets/06.png',
     bodycopy: `<h2>In search of craziness</h2>
     <p>
     Tom Peters, a management guru, made a plea for businesses to embrace the
@@ -302,7 +301,7 @@ const entries = [
   {
     tabtitle: '1994',
     title: '22',
-    image: 'images/27.png',
+    image: 'assets/27.png',
     bodycopy: `<h2>Join the derivatives club</h2>
     <p>
     Financial derivatives had swept the markets and baffled regulators and even
@@ -316,7 +315,7 @@ const entries = [
   {
     tabtitle: '1993',
     title: '23',
-    image: 'images/01.png',
+    image: 'assets/01.png',
     bodycopy: `<h2>New people, new vigour, old ideas</h2>
     <p>
     The Clintonian era began with the inauguration of Bill Clinton as the 42nd
@@ -330,7 +329,7 @@ const entries = [
   {
     tabtitle: '1992',
     title: '25',
-    image: 'images/23.png',
+    image: 'assets/23.png',
     bodycopy: `<h2>And now for the next 500 years</h2>
     <p>
     Paul Kennedy, a professor of history at Yale University, asked where America
@@ -342,7 +341,7 @@ const entries = [
   {
     tabtitle: '1991',
     title: '26',
-    image: 'images/26.png',
+    image: 'assets/26.png',
     bodycopy: `<h2>The next big bust</h2>
     <p>
     Following the crash of the Japan's stockmarket in 1990,
@@ -355,7 +354,7 @@ const entries = [
   {
     tabtitle: '1990',
     title: '27',
-    image: 'images/21.png',
+    image: 'assets/21.png',
     bodycopy: `<h2>After communism</h2>
     <p>
     The collapse of communism in 1989 created an entirely new political and
@@ -369,7 +368,7 @@ const entries = [
   {
     tabtitle: '1989',
     title: '28',
-    image: 'images/20.png',
+    image: 'assets/20.png',
     bodycopy: `<h2>The World in 1989...and on to the 1990s</h2>
     <p>
     As a new decade loomed, Mary Goldring, editor of The World in 1989, took a
@@ -382,7 +381,7 @@ const entries = [
   {
     tabtitle: '1988',
     title: '29',
-    image: 'images/11.png',
+    image: 'assets/11.png',
     bodycopy: `<h2>AIDS casts a dark shadow</h2>
     <p>
     Matt Ridley, then The Economist's Washington correspondent, speculated on
@@ -395,7 +394,7 @@ const entries = [
   {
     tabtitle: '1987',
     title: '30',
-    image: 'images/15.png',
+    image: 'assets/15.png',
     bodycopy: `<h2>The World in 1987: A political outlook</h2>
     <p>
     In the first edition of The World In..., Andrew Boyd, who wrote on foreign
@@ -405,9 +404,7 @@ const entries = [
     </p>`,
     byline: 'From The World in 1987',
   },
-]
-
-
+];
 export default (
   <WinCover onChangeIndex="" prevNext="arrows" entries={entries}/>
 );

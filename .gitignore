@@ -2,5 +2,7 @@ node_modules/
 assets/
 *.log
 *.js
+bundle.css
+*.html
 bundle.*
 .DS_Store
