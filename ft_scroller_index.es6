@@ -12,13 +12,13 @@ export default class WinCover extends React.Component {
       prevNext: React.PropTypes.string,
       icon: React.PropTypes.object,
       onChangeIndex: React.PropTypes.func,
-      entries: React.PropTypes.array,
+      entries: React.PropTypes.array
     };
   }
 
   static get defaultProps() {
     return {
-      sceneTotal: 30,
+      sceneTotal: 4,
       defaultSceneIndex: 0,
       sceneTitle: null,
       icon: {
@@ -37,18 +37,35 @@ export default class WinCover extends React.Component {
 
   componentDidMount() {
     require('ftscroller');
-    var containerElement;
-    var scroller;
+
+
+    var containerElement, containerElement2, scroller, scroller2;
     containerElement = document.getElementById('scrollcontainer');
+    containerElement2 = document.getElementById('scrollcontainer2');
     const FTScroller = require('ftscroller');
     scroller = new FTScroller(containerElement, {
-      scrollbars: false,
-      scrollingX: true,
-      updateOnWindowResize: true
-    });
+    scrollbars: false,
+    scrollingX: true,
+    updateOnWindowResize: true
+  });
+  scroller2 = new FTScroller(containerElement2, {
+  scrollbars: false,
+  scrollingX: true,
+  updateOnWindowResize: true,
+  snapping: true,
+});
+
+
+  scroller2.addEventListener('scrollend', scrollingEnded);
+
+    function scrollingEnded() {
+      let activeScene = scroller2.currentSegment.x;
+    }
   }
 
+  // EVENT LISTENERS
   prevNext(arrow) {
+
     let index = this.state.sceneIndex;
     if (arrow === 'left') {
       if (index > 0) {
@@ -59,9 +76,11 @@ export default class WinCover extends React.Component {
     }
     this.changeIndex(index);
   }
+  // page indexes:
   indexClicked(index) {
     this.changeIndex(index);
   }
+  //
   changeIndex(newIndex) {
     if (this.props.onChangeIndex) {
       this.props.onChangeIndex(newIndex, this.state.sceneIndex);
@@ -69,17 +88,18 @@ export default class WinCover extends React.Component {
     this.setState({ sceneIndex: newIndex });
   }
 
+
+  // RENDER
   render() {
     const sceneIndex = this.state.sceneIndex;
     const sceneTotal = this.props.sceneTotal;
-    let leftClass = 'win-cover-scroller-previous';
-    let rightClass = 'win-cover-scroller-next';
+    let leftClass = 'pager-previous';
+    let rightClass = 'pager-next';
     if (sceneIndex === 0) {
-      leftClass += ' win-cover-scroller-arrow-hidden';
+      leftClass += ' pager-arrow-hidden';
     } else if (sceneIndex === (sceneTotal - 1)) {
-      rightClass += ' win-cover-scroller-arrow-hidden';
+      rightClass += ' pager-arrow-hidden';
     }
-
     let previousArrow;
     let nextArrow;
     let previous;
@@ -101,25 +121,16 @@ export default class WinCover extends React.Component {
       </div>
     );
 
+    // Page index
     const index = [];
     const bodycopy = [];
-    const images = [];
-    if (sceneIndex === 0) {
-      this.props.entries.map((entry) => {
-        let imageClass;
-          imageClass = 'image--allselected';
-          images.push(
-              <img src={entry.image} className={imageClass}/>
-          );
-        })
-      }
-
+    const desktopimages = [];
     this.props.entries.map((entry, i) => {
-      let indexClass, bodyClass, imageClass;
+    let indexClass, bodyClass, desktopImageClass;
       if (i === sceneIndex) {
-        indexClass = 'win-cover-scrollerIndex--selected';
+        indexClass = 'pagerIndex--selected';
         bodyClass = 'bodyCopy--selected';
-        imageClass = 'image--selected';
+        desktopImageClass = 'desktopImage--selected';
       }
       index.push(
         <li key={i} onClick={this.indexClicked.bind(this, i)}>
@@ -128,37 +139,32 @@ export default class WinCover extends React.Component {
       );
 
       bodycopy.push(
-          <div className={bodyClass}>
-            <div dangerouslySetInnerHTML={ { __html: entry.bodycopy } }></div>
-            <span className="win-cover-byline">{entry.byline}</span>
-            <div className="win-cover-readmore">
-            <a href={entry.url}>Read more
-              <Icon className="win-cover-readmore-arrow" icon="right"/>
-            </a>
-            </div>
-          </div>
+          <div className={bodyClass} dangerouslySetInnerHTML={ { __html: entry.bodycopy } }></div>
       );
-      images.push(
-          <img src={entry.image} className={imageClass}/>
+      desktopimages.push(
+          <img src={entry.imagedesktop} className={desktopImageClass}/>
       );
     })
 
+    // Glue it all together
     return (
       <div className="win-cover">
+      <div id="scrollcontainer2">
         <div className="win-cover--imagecontainer">
-          {images}
+        {desktopimages}
         </div>
-        <div className="win-cover-scroller">
-          {previous}
-          <div id="scrollcontainer">
-            <ul className="win-cover-scroller--inner">
-              {index}
-            </ul>
+      </div>
+          <div className="pager">
+            {previous}
+              <div id="scrollcontainer">
+                <ul className="pager--inner">
+                  {index}
+                </ul>
+              </div>
+            {next}
           </div>
-          {next}
-        </div>
           <div className="win-cover--bodyCopy">
-            {bodycopy}
+          {bodycopy}
           </div>
         </div>
     );
