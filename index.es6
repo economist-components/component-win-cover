@@ -181,10 +181,6 @@ export default class WinCover extends React.Component {
         </div>
       );
       /* eslint-enable react/no-danger */
-
-      // images.push(
-      //   <a href={entry.url}><img src={entry.image} key={`single-image-${i}`} className={imageClass}/></a>
-      // );
     });
 
     return (
