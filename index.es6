@@ -130,16 +130,26 @@ export default class WinCover extends React.Component {
           <img src={entry.image} key={`image-all-selected-${i}`} className="image--allselected" />
         );
       });
+    } else {
+      this.props.entries.map((entry, i) => {
+        let imageClass = null;
+        if (i === sceneIndex) {
+          imageClass = 'image--selected';
+        }
+        images.push(
+          <a href={entry.url} className={imageClass}>
+          <img src={entry.image} className={imageClass}key={`single-image-${i}`}/>
+          </a>
+      );
+      });
     }
 
     this.props.entries.map((entry, i) => {
       let indexClass = null;
       let bodyClass = null;
-      let imageClass = null;
       if (i === sceneIndex) {
         indexClass = 'win-cover-scrollerIndex--selected';
         bodyClass = 'bodyCopy--selected';
-        imageClass = 'image--selected';
       }
 
       index.push(
@@ -172,9 +182,9 @@ export default class WinCover extends React.Component {
       );
       /* eslint-enable react/no-danger */
 
-      images.push(
-        <img src={entry.image} key={`single-image-${i}`} className={imageClass}/>
-      );
+      // images.push(
+      //   <a href={entry.url}><img src={entry.image} key={`single-image-${i}`} className={imageClass}/></a>
+      // );
     });
 
     return (
