@@ -171,13 +171,14 @@ export default class WinCover extends React.Component {
       /* eslint-disable react/no-danger */
       bodycopy.push(
         <div className={bodyClass} key={`bodycopy-${i}`}>
+        <a href={entry.url}>
           <div dangerouslySetInnerHTML={bodyCopy()}></div>
           <span className="win-cover-byline">{entry.byline}</span>
           <div className="win-cover-readmore">
-          <a href={entry.url}>Read more
+          Read more
             <Icon className="win-cover-readmore-arrow" icon="right"/>
-          </a>
           </div>
+          </a>
         </div>
       );
       /* eslint-enable react/no-danger */

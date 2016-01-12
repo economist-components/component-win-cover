@@ -17,7 +17,7 @@ const entries = [
   {
     tabtitle: '2015',
     title: '01',
-    image: 'assets/13.png',
+    image: 'assets/35.png',
     bodycopy: `<h2>Unfinished business for the world's women</h2>
     <p>
     In 2016 Hillary Clinton could become the first woman to lead the
@@ -130,7 +130,7 @@ const entries = [
   {
     tabtitle: '2007',
     title: '09',
-    image: 'assets/19.png',
+    image: 'assets/34.png',
     bodycopy: `<h2>Work-life imbalance</h2>
     <p>
     In the 1990s a wonderful new way of working beckoned: a world where it would
@@ -368,7 +368,7 @@ const entries = [
   {
     tabtitle: '1989',
     title: '28',
-    image: 'assets/20.png',
+    image: 'assets/36.png',
     bodycopy: `<h2>The World in 1989...and on to the 1990s</h2>
     <p>
     As a new decade loomed, Mary Goldring, editor of The World in 1989, took a
