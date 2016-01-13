@@ -3,21 +3,21 @@ import React from 'react';
 
 const entries = [
   {
-    tabtitle: 'Welcome',
+    tabtitle: '2000',
     title: '00',
-    image: null,
+    image: '',
     bodycopy: `<h2>Welcome...</h2>
     <p>
-    To mark the 30th edition of the <i>The World In</i>, we have chosen one article from each
+    To mark the 30th edition of the The World In, we have chosen one article from each
     issue to reflect three decades of forward-thinking.
     </p>`,
-    byline: 'From The World in 2016',
+    byline: 'From The World in 2000',
     url: null,
   },
   {
     tabtitle: '2015',
     title: '01',
-    image: 'assets/35.png',
+    image: 'assets/13.png',
     bodycopy: `<h2>Unfinished business for the world's women</h2>
     <p>
     In 2016 Hillary Clinton could become the first woman to lead the
@@ -35,7 +35,7 @@ const entries = [
     bodycopy: `<h2>The Great War</h2>
     <p>
     For the centenary of the outbreak of the first world war in 1914, the only
-    war in British history called "Great", Ann Wroe, <i>The Economist</i>'s obituaries
+    war in British history called "Great", Ann Wroe, <i>The Economist's</i> obituaries
     editor, hoped that Europe’s commemorations during 2014 might perhaps end a 100-year haunting.
     </p>`,
     byline: 'From The World in 2014',
@@ -77,7 +77,7 @@ const entries = [
     The world's population was expected to reach seven billion in 2011. The
     increase from six to seven billion had only taken a dozen years, prompting
     a Malthusian panic about the dire impact of overpopulation. John Parker,
-    then <i>The Economist</i>'s globalisation correspondent, took a calmer view,
+    then The Economist's globalisation correspondent, took a calmer view,
     arguing that the underlying rate of population growth was, in fact, slowing.
     </p>`,
     byline: 'From The World in 2011',
@@ -104,7 +104,7 @@ const entries = [
     bodycopy: `<h2>About 2008: sorry</h2>
     <p>
     The financial crisis of 2008 caught everyone by surprise—not least, it must
-    be admitted with a flush of embarrassment, <i>The World In</i>. Our editor used
+    be admitted with a flush of embarrassment, The World In. Our editor used
     his annual column of hits and misses to come clean about failing to spot the
     biggest financial crisis since the Depression but offered two-and-a-half
     reasons to keep reading our predictions.
@@ -121,7 +121,7 @@ const entries = [
     James Bond, the debonair, fictional creation of Ian Fleming, had much to
     celebrate in 2008, with an exhibition at the Imperial War Museum in London,
     a new Bond novel (despite Fleming's death in 1964) and the latest Bond film.
-    John Grimond, writer at large for <i>The Economist</i> and husband of Ian Fleming's
+    John Grimond, writer at large for The Economist and husband of Ian Fleming's
     niece, looked at what makes Bond such an enduring cultural character.
     </p>`,
     byline: 'From The World in 2008',
@@ -130,12 +130,12 @@ const entries = [
   {
     tabtitle: '2007',
     title: '09',
-    image: 'assets/34.png',
+    image: 'assets/19.png',
     bodycopy: `<h2>Work-life imbalance</h2>
     <p>
     In the 1990s a wonderful new way of working beckoned: a world where it would
     be possible to work when and where you wanted and enjoy that elusive
-    ideal—work-life balance. In the World in 2007, Lucy Kellaway of the
+    ideal—work-life balance. In the World in 2007,  Lucy Kellaway of the
     Financial Times not only lamented the revolution that never arrived but
     predicted that long hours would be back with a vengeance.
     </p>`,
@@ -148,8 +148,7 @@ const entries = [
     image: 'assets/32.png',
     bodycopy: `<h2>Looking back on the future</h2>
     <p>
-    For <i>The World In...</i>'s 20th edition, we invited an historian, Niall Ferguson,
-    to take a critical look at our record.
+    For The World In...'s 20th edition, we invited an historian, Niall Ferguson, to take a critical look at our record
     </p>`,
     byline: 'From The World in 2006',
     url: 'http://www.theworldin.com/article/12064',
@@ -163,7 +162,7 @@ const entries = [
     In 2004 digital cameras outsold film cameras for the first time—but both
     were outstripped by sales of camera-phones, even though the quality of such
     cameras was hopelessly inferior. In The World in 2005, Tom Standage, then
-    <i>The Economist</i>'s technology editor, predicted that phone technology might
+    The Economist's technology editor, predicted that phone technology might
     improve enough to compete with digital cameras—eventually.
     </p>`,
     byline: 'From The World in 2005',
@@ -203,7 +202,7 @@ const entries = [
     bodycopy: `<h2>Europe's day of change</h2>
     <p>
     The first euro coins and notes started circulating on New Year's Day, 2002.
-    Gideon Rachman, then Brussels correspondent for <i>The Economist</i>, predicted
+    Gideon Rachman, then Brussels correspondent for The Economist, predicted
     that the single currency's impact would go far beyond being simply a new way
     to pay at the supermarket. It would alter forever Europe's view both of itself and of the world.
     </p>`,
@@ -243,7 +242,7 @@ const entries = [
     <p>
     NATO's first, tentative intervention in Kosovo in 1998 defied prevailing rules
     about the sacred principle of sovereignty. Brian Beedham, an associate editor
-    at <i>The Economist</i> at the time, asserted that it also gave the world a new rule:
+    at The Economist at the time, asserted that it also gave the world a new rule:
     that no undemocratic state could expect its sovereignty to remain untouched.
     </p>`,
     byline: 'From The World in 1999',
@@ -255,7 +254,7 @@ const entries = [
     image: 'assets/03.png',
     bodycopy: `<h2>The Web lifestyle</h2>
     <p>
-    Writing for <i>The World in 1998</i>, Microsoft's chairman. Bill Gates, forecast
+    Writing for The World in 1998, Microsoft's chairman. Bill Gates, forecast
     what has since become obvious: that, within a decade, the Web, as we called
     it then, would transform every facet of life.
     </p>`,
@@ -268,7 +267,7 @@ const entries = [
     image: 'assets/14.png',
     bodycopy: `<h2>Hong Kong, July 1st</h2>
     <p>
-    On June 30th 1997 Britain handed Hong Kong back to China. In <i>The World in 1997</i>,
+    On June 30th 1997 Britain handed Hong Kong back to China. In The World in 1997,
     the last British governor of the territory, Christopher Patten, speculated on
     whether Hong Kong would survive as a democratic, free-market economy.
     </p>`,
@@ -281,7 +280,7 @@ const entries = [
     image: 'assets/20.png',
     bodycopy: `<h2>A Labour Britain's promise</h2>
     <p>
-    <i>The World in 1996</i> asked Tony Blair, then Britain's opposition leader, to spell
+    The World in 1996 asked Tony Blair, then Britain's opposition leader, to spell
     out his ideas for the country in the coming year.
     </p>`,
     byline: 'From The World in 1996',
@@ -307,7 +306,7 @@ const entries = [
     <p>
     Financial derivatives had swept the markets and baffled regulators and even
     bankers. Marjorie Deane, an expert on international finance and formerly a
-    finance editor at <i>The Economist</i>, predicted that markets in some emerging
+    finance editor at The Economist, predicted that markets in some emerging
     economies were about to enter the fray.
     </p>`,
     byline: 'From The World in 1994',
@@ -321,7 +320,7 @@ const entries = [
     <p>
     The Clintonian era began with the inauguration of Bill Clinton as the 42nd
     president of the United States in January 1993. Mike Elliot, who was
-    <i>The Economist</i>'s Washington bureau chief at the time, asked whether the new
+    The Economist's Washington bureau chief at the time, asked whether the new
     president would be able to put his "new Democrat" ideas into practice.
     </p>`,
     byline: 'From The World in 1993',
@@ -346,7 +345,7 @@ const entries = [
     bodycopy: `<h2>The next big bust</h2>
     <p>
     Following the crash of the Japan's stockmarket in 1990,
-    Bill Emmott, then business-affairs editor of <i>The Economist</i>,
+    Bill Emmott, then business-affairs editor of The Economist,
     predicted its property market would be next to fall to earth.
     </p>`,
     byline: 'From The World in 1991',
@@ -359,7 +358,7 @@ const entries = [
     bodycopy: `<h2>After communism</h2>
     <p>
     The collapse of communism in 1989 created an entirely new political and
-    economic landscape. <i>In The World in 1990</i>, Norman Macrae, <i>The Economist</i>'s
+    economic landscape. In The World in 1990, Norman Macrae, The Economist's
     deputy editor at the time, pondered the economic fates of those countries
     freed by the fall of the Soviet Union.
     </p>`,
@@ -369,10 +368,10 @@ const entries = [
   {
     tabtitle: '1989',
     title: '28',
-    image: 'assets/36.png',
+    image: 'assets/20.png',
     bodycopy: `<h2>The World in 1989...and on to the 1990s</h2>
     <p>
-    As a new decade loomed, Mary Goldring, editor of <i>The World in 1989</i>, took a
+    As a new decade loomed, Mary Goldring, editor of The World in 1989, took a
     (relatively) optimistic view of the 1990s.
     </p>`,
     byline: 'From The World in 1989',
@@ -385,7 +384,7 @@ const entries = [
     image: 'assets/11.png',
     bodycopy: `<h2>AIDS casts a dark shadow</h2>
     <p>
-    Matt Ridley, then <i>The Economist</i>'s Washington correspondent, speculated on
+    Matt Ridley, then The Economist's Washington correspondent, speculated on
     what had been learned during the first decade of AIDS that could help to
     halt the march of a seemingly unstoppable disease.
     </p>`,
@@ -398,8 +397,8 @@ const entries = [
     image: 'assets/15.png',
     bodycopy: `<h2>The World in 1987: A political outlook</h2>
     <p>
-    In the first edition of <i>The World In...</i>, Andrew Boyd, who wrote on foreign
-    affairs for <i>The Economist</i> between 1951 and 1988, looked at the challenges
+    In the first edition of The World In..., Andrew Boyd, who wrote on foreign
+    affairs for The Economist between 1951 and 1988, looked at the challenges
     facing a lame-duck American president and his ambitious, much younger Soviet
     counterpart.
     </p>`,
