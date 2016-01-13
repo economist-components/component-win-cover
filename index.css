@@ -1,6 +1,5 @@
 @import '@economist/component-font-officina';
 
-
 @keyframes animationFrames{
   0% {
     opacity:0;
@@ -19,7 +18,7 @@
   }
 }
 
-.win-cover {
+.wincover {
   font-family: Officina;
   background-color: #253A43;
   max-width: 1190px;
@@ -29,7 +28,7 @@
   user-select: none;
 }
 
-.win-cover--imagecontainer {
+.wincover--imagecontainer {
   display: flex;
   width: 100%;
   position: relative;
@@ -40,7 +39,7 @@
   overflow: hidden;
 }
 
-.win-cover--imagecontainer img {
+.wincover--image, .wincover--image--singleselected, .wincover--image--allselected {
   animation: animationFramesOut ease-out 1.0s;
   animation-iteration-count: 1;
   animation-fill-mode:forwards;
@@ -54,21 +53,13 @@
   display: none;
 }
 
-.win-cover--imagecontainer > a {
-  animation: animationFramesOut ease-out 1.0s;
-  animation-iteration-count: 1;
-  animation-fill-mode:forwards;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.wincover--image > img,
+.wincover--image--singleselected > img,
+ .wincover--image--allselected > img {
   width: 100%;
-  height: auto;
-  display: none;
 }
 
-.win-cover--imagecontainer > .image--selected {
+.wincover--image--singleselected {
   display: block;
   width: 100%;
   height: auto;
@@ -76,15 +67,7 @@
   animation-iteration-count: 1;
 }
 
-.win-cover--imagecontainer a > .image--selected {
-  display: block;
-  width: 100%;
-  height: auto;
-  animation: animationFrames ease-out 0.5s;
-  animation-iteration-count: 1;
-}
-
-.win-cover--imagecontainer > .image--allselected {
+.wincover--image--allselected {
   display: block;
   width: 100%;
   height: auto;
@@ -92,7 +75,7 @@
   animation-iteration-count: 1;
 }
 
-.win-cover--bodyCopy {
+.wincover--body-copy {
   max-width: 690px;
   height: 410px;
   background-color: #253A43;
@@ -100,33 +83,29 @@
   overflow: hidden;
 }
 
-.win-cover--bodyCopy > div {
+.wincover--body-copy > div {
   display: none;
   padding: 20px;
 }
 
-.win-cover--bodyCopy > .bodyCopy--selected {
-  display: block;
-}
-
-.bodyCopy--selected p {
+.wincover--body-copy p {
   color: #fff;
   font-size: 25px;
   line-height: 35px;
 }
 
-.bodyCopy--selected h2 {
+.wincover--body-copy h2 {
   font-weight: bold;
   color: #FFF600;
   font-size: 40px;
   margin: 0;
 }
 
-.bodyCopy--selected a {
+.wincover--body-copy a {
   text-decoration: none;
 }
 
-.win-cover-byline {
+.wincover-byline {
   color: #367FB6;
   font-size: 15px;
   display: block;
@@ -134,15 +113,15 @@
   padding: 6px 0 20px 0;
 }
 
-.win-cover-readmore {
+.wincover-readmore {
   width: 120px;
   float: right;
   height: 26px;
   position: relative;
 }
 
-.win-cover-readmore span,
-.win-cover-readmore span a {
+.wincover-readmore span,
+.wincover-readmore span a {
   font-size: 20px;
   font-style: italic;
   color: #FFF600;
@@ -152,7 +131,7 @@
   margin-left: 4px;
 }
 
-.win-cover-readmore-arrow {
+.wincover-readmore-arrow {
   fill: #FFF600;
   height: 100%;
   float: right;
@@ -161,19 +140,19 @@
   top: 2px;
 }
 
-.win-cover-readmore span:hover {
+.wincover-readmore span:hover {
   border-bottom: 1px solid #FFF600;
   cursor: pointer;
 }
 
-.win-cover #scrollcontainer{
+.wincover .wincover--scroller{
   background-color: #253A43;
   flex: 24;
   max-width: 100%;
   max-height: 48px;
 }
 
-.win-cover-scroller {
+.wincover--scroller {
   width: 100%;
   max-width: 1190px;
   padding: 0;
@@ -185,8 +164,8 @@
   position: relative;
 }
 
-.win-cover-scroller-previous,
-.win-cover-scroller-next {
+.wincover--scroller .carousel--previous-arrow,
+.wincover--scroller .carousel--next-arrow {
   cursor: pointer;
   width: 40px;
   max-width: 40px;
@@ -196,55 +175,55 @@
   z-index: 99999;
 }
 
-.win-cover-scroller-previous:hover {
+.wincover--scroller .carousel--previous-arrow:hover {
   background: linear-gradient(to right, rgba(81,98,105,1) 50%,rgba(81,98,105,0) 100%);
 }
 
-.win-cover-scroller-next:hover {
+.wincover--scroller .carousel--next-arrow:hover {
   background: linear-gradient(to right, rgba(81,98,105,0) 0%,rgba(81,98,105,1) 50%);
 }
 
-.win-cover-scroller-previous {
+.wincover--scroller .carousel--previous-arrow {
   background: linear-gradient(to right, rgba(37,58,67,1) 50%,rgba(37,58,67,0) 100%);
 }
 
-.win-cover-scroller-next {
+.wincover--scroller .carousel--next-arrow {
   background: linear-gradient(to right, rgba(37,58,67,0) 0%,rgba(37,58,67,1) 50%);
   right: 0;
   top: 0;
 }
 
-.win-cover-scroller-previous svg,
-.win-cover-scroller-next svg {
+.wincover--scroller .carousel--previous-arrow svg,
+.wincover--scroller .carousel--next-arrow svg {
  width: 100%;
  height: 100%;
  fill: #FFF600;
  display: block;
 }
 
-.win-cover-scroller-arrow-hidden {
+.wincover--scroller-arrow-hidden {
   opacity: 1;
 }
 
-.win-cover-scroller--inner {
+.wincover--scroller .carousel--innerlist {
   display: flex;
   padding: 0;
   margin: 0;
 }
 
-.win-cover--bodyCopy div:first-child .win-cover-readmore {
+.wincover--body-copy div:first-child .wincover-readmore {
   display: none;
 }
 
-.win-cover-scroller--inner li:first-child {
+.wincover--scroller .carousel--element:first-child {
   padding-left: 15px;
 }
 
-.win-cover-scroller--inner li:last-child {
+.wincover--scroller .carousel--element:last-child {
   padding-right: 15px;
 }
 
-.win-cover-scroller--inner li {
+.wincover--scroller .carousel--element {
   padding: 0;
   margin:0;
   cursor: pointer;
@@ -258,32 +237,31 @@
   flex: 2;
 }
 
-.win-cover-scroller--inner li:hover {
+.wincover--scroller .carousel--element:hover {
   background-color: #516269;
 }
 
-.win-cover-scroller--inner li:last-child {
+.wincover--scroller .carousel--element:last-child {
   border: 0;
 }
 
-.win-cover-scroller--inner li div,
-.win-cover-scrollerIndex--selected {
+.wincover--scroller .carousel--element,
+.wincover--scroller .carousel--element[data-carousel-active="true"] {
   text-align: center;
-  /*padding-top: 16px;*/
   line-height: 48px;
   font-size: 16px;
   color: #fff;
 }
 
-.win-cover-scrollerIndex--selected {
+.wincover--scroller .carousel--element[data-carousel-active="true"] {
   flex: 1;
   background-color: #367FB6;
 }
 
 @media only screen and (max-width: 780px) {
 
-  #scrollcontainer::before,
-  #scrollcontainer::after {
+  .wincover--scroller::before,
+  .wincover--scroller::after {
     content: "";
     width: 15px;
     height: 100%;
@@ -294,50 +272,54 @@
     z-index: 1;
   }
 
-  #scrollcontainer::after {
+  .wincover--scroller::after {
     background: linear-gradient(to left, rgba(37,58,67,1) 0%,rgba(37,58,67,0) 100%);
     top: 0;
     left: calc(100% - 15px);
   }
 
-  .win-cover-scroller-previous,
-  .win-cover-scroller-next {
+  .wincover--scroller .carousel--previous-arrow,
+  .wincover--scroller .carousel--next-arrow {
     display: none;
   }
 
-  .win-cover-scroller--inner li:first-child {
+  .wincover--scroller .carousel--element:first-child {
     padding-left: 0;
   }
 
-  .win-cover-scroller--inner li:last-child {
+  .wincover--scroller .carousel--element:last-child {
     padding-right: 0;
   }
 
 
-  .win-cover--imagecontainer {
+  .wincover--imagecontainer {
     padding-top: 89%;
     background-size: auto 100%;
     background-position: 46% 0;
   }
 
-  .win-cover--imagecontainer > .image--allselected,
-  .win-cover--imagecontainer a > .image--selected,
-  .win-cover--imagecontainer > img {
+  .wincover--image, .wincover--image--singleselected, .wincover--image--allselected {
     width: auto;
-    height: 100%;
+  }
+
+  .wincover--image > img,
+  .wincover--image--singleselected > img,
+   .wincover--image--allselected > img {
+    width: 158%;
     transform: translateX(-17%);
   }
 
-  .win-cover--bodyCopy {
+  .wincover--body-copy {
     height: 400px;
+    margin: 20px;
   }
 
-  .bodyCopy--selected h2 {
+  .wincover--body-copy h2 {
     font-size: 22px;
     line-height: 30px;
   }
 
-  .bodyCopy--selected p {
+  .wincover--body-copy p {
     font-size: 18px;
     line-height: 24px;
   }
