@@ -40,11 +40,45 @@ export default class WinCover extends React.Component {
   componentDidMount() {
     const containerElement = document.getElementById('scrollcontainer'); //eslint-disable-line
     const Scroller = require('ftscroller'); //eslint-disable-line
-    return new Scroller(containerElement, {
+    const myScroller = new Scroller(containerElement, {
       scrollbars: false,
       scrollingX: true, //eslint-disable-line
       updateOnWindowResize: true,
     });
+
+    var listOne = document.getElementById("scrollcontainer").getElementsByTagName("li")[1]; //eslint-disable-line
+    var list = document.getElementById("scrollcontainer").getElementsByTagName("li"); //eslint-disable-line
+    const listWidth = listOne.offsetWidth; //eslint-disable-line
+    const winWidth = Math.round((document.getElementById('scrollcontainer').offsetWidth / listWidth ) / 2 ); //eslint-disable-line
+    const updateScroller = function(index){ //eslint-disable-line
+      myScroller.scrollTo(((listWidth * (index - winWidth))), 0, true);
+    };
+
+    const updateArrowLeft = function(currentPos){ //eslint-disable-line
+      myScroller.scrollTo((currentPos - listWidth), 0, true);
+    };
+
+    const updateArrowRight = function(currentPos){ //eslint-disable-line
+      myScroller.scrollTo((currentPos + listWidth), 0, true);
+    };
+
+    const targetElement = document.getElementById('scroll-list'); //eslint-disable-line
+    const leftArrow = document.getElementsByClassName('win-cover-scroller-previous')[0]; //eslint-disable-line
+    const rightArrow = document.getElementsByClassName('win-cover-scroller-next')[0]; //eslint-disable-line
+    for (let i = 0, len = targetElement.children.length; i < len; i++) { (function(index){
+      targetElement.children[i].onclick = function(){ //eslint-disable-line
+        updateScroller(index);
+      };
+    })(i);
+    }
+
+    leftArrow.addEventListener('click', function() { //eslint-disable-line
+      updateArrowLeft(myScroller.scrollLeft);
+    }, false);
+
+    rightArrow.addEventListener('click', function() { //eslint-disable-line
+      updateArrowRight(myScroller.scrollLeft);
+    }, false);
   }
 
   handlePrevNext(event) {
@@ -192,7 +226,7 @@ export default class WinCover extends React.Component {
         <div className="win-cover-scroller">
           {previous}
           <div id="scrollcontainer">
-            <ul className="win-cover-scroller--inner">
+            <ul id="scroll-list" className="win-cover-scroller--inner">
               {index}
             </ul>
           </div>

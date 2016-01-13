@@ -126,7 +126,6 @@
   text-decoration: none;
 }
 
-
 .win-cover-byline {
   color: #367FB6;
   font-size: 15px;
@@ -205,7 +204,6 @@
   background: linear-gradient(to right, rgba(81,98,105,0) 0%,rgba(81,98,105,1) 50%);
 }
 
-
 .win-cover-scroller-previous {
   background: linear-gradient(to right, rgba(37,58,67,1) 50%,rgba(37,58,67,0) 100%);
 }
@@ -234,8 +232,16 @@
   margin: 0;
 }
 
-.win-cover-scroller--inner li:first-child {
+.win-cover--bodyCopy div:first-child .win-cover-readmore {
   display: none;
+}
+
+.win-cover-scroller--inner li:first-child {
+  padding-left: 15px;
+}
+
+.win-cover-scroller--inner li:last-child {
+  padding-right: 15px;
 }
 
 .win-cover-scroller--inner li {
@@ -244,7 +250,7 @@
   cursor: pointer;
   list-style: none;
   min-height: 48px;
-  min-width: 74px;
+  min-width: 72px;
   height: 100%;
   border-right: 1px solid #fff;
   display: flex;
@@ -263,7 +269,8 @@
 .win-cover-scroller--inner li div,
 .win-cover-scrollerIndex--selected {
   text-align: center;
-  padding-top: 16px;
+  /*padding-top: 16px;*/
+  line-height: 48px;
   font-size: 16px;
   color: #fff;
 }
@@ -274,6 +281,39 @@
 }
 
 @media only screen and (max-width: 780px) {
+
+  #scrollcontainer::before,
+  #scrollcontainer::after {
+    content: "";
+    width: 15px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(37,58,67,1) 0%,rgba(37,58,67,0) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  #scrollcontainer::after {
+    background: linear-gradient(to left, rgba(37,58,67,1) 0%,rgba(37,58,67,0) 100%);
+    top: 0;
+    left: calc(100% - 15px);
+  }
+
+  .win-cover-scroller-previous,
+  .win-cover-scroller-next {
+    display: none;
+  }
+
+  .win-cover-scroller--inner li:first-child {
+    padding-left: 0;
+  }
+
+  .win-cover-scroller--inner li:last-child {
+    padding-right: 0;
+  }
+
+
   .win-cover--imagecontainer {
     padding-top: 89%;
     background-size: auto 100%;
@@ -289,7 +329,7 @@
   }
 
   .win-cover--bodyCopy {
-    height: 330px;
+    height: 400px;
   }
 
   .bodyCopy--selected h2 {
