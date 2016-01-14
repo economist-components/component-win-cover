@@ -59,6 +59,9 @@
     "assets/31.png",
     "assets/32.png",
     "assets/33.png",
+    "assets/34.png",
+    "assets/35.png",
+    "assets/36.png",
     "assets/cover_bg.jpg"
   ],
   "babel": {
@@ -139,7 +142,7 @@
   },
   "config": {
     "lint_opts": "--ignore-path .gitignore --ext .es6",
-    "testbundle_opts": "-r react -r .:./index.es6 -r ./example.js:example ./test/index.js -o testbundle.js",
+    "testbundle_opts": "-r react -r react-dom -r .:./index.es6 -r ./example.js:example ./test/index.js -o testbundle.js",
     "ghpages_files": "*.html *.css *.js"
   },
   "scripts": {
@@ -167,7 +170,8 @@
   "dependencies": {
     "@economist/component-font-officina": "^1.0.0",
     "@economist/component-icon": "^3.0.2",
-    "ftscroller": "^0.6.2"
+    "ftscroller": "^0.6.2",
+    "react-dom": "^0.14.6"
   },
   "devDependencies": {
     "@economist/component-devpack": "^3.6.1",
