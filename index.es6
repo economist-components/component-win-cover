@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from '@economist/component-icon';
-
+import Carousel from './carousel';
 
 export default class WinCover extends React.Component {
 
@@ -8,7 +8,7 @@ export default class WinCover extends React.Component {
     return {
       test: React.PropTypes.node,
       sceneTotal: React.PropTypes.number,
-      defaultSceneIndex: React.PropTypes.number,
+      startingTargetIndex: React.PropTypes.number,
       prevNext: React.PropTypes.string,
       icon: React.PropTypes.object,
       onChangeIndex: React.PropTypes.func,
@@ -19,7 +19,7 @@ export default class WinCover extends React.Component {
   static get defaultProps() {
     return {
       sceneTotal: 30,
-      defaultSceneIndex: 0,
+      startingTargetIndex: 0,
       sceneTitle: null,
       icon: {
         color: '#fff',
@@ -32,167 +32,56 @@ export default class WinCover extends React.Component {
   // Set default state:
   constructor() {
     super(...arguments);
-    this.state = { sceneIndex: this.props.defaultSceneIndex };
-    this.handlePrevNext = this.handlePrevNext.bind(this);
-    this.handleIndexClicked = this.handleIndexClicked.bind(this);
+    this.handleActiveTargetChange = this.handleActiveTargetChange.bind(this);
+    this.state = { targetIndex: this.props.startingTargetIndex };
   }
 
-  componentDidMount() {
-    const containerElement = document.getElementById('scrollcontainer'); //eslint-disable-line
-    const Scroller = require('ftscroller'); //eslint-disable-line
-    return new Scroller(containerElement, {
-      scrollbars: false,
-      scrollingX: true, //eslint-disable-line
-      updateOnWindowResize: true,
-    });
-  }
-
-  handlePrevNext(event) {
-    if (!event && !event.currentTarget) {
-      return;
-    }
-
-    const arrow = event.currentTarget.dataset.move;
-    let index = this.state.sceneIndex;
-    if (arrow === 'left') {
-      if (index > 0) {
-        index--;
-      }
-    } else if (index < (this.props.sceneTotal - 1)) {
-      index++;
-    }
-    this.changeIndex(index);
-  }
-
-  handleIndexClicked(event) {
-    if (!event && !event.currentTarget) {
-      return;
-    }
-    const index = Number(event.currentTarget.dataset.itemId);
-    this.changeIndex(index);
-  }
-
-  changeIndex(newIndex) {
-    if (this.props.onChangeIndex) {
-      this.props.onChangeIndex(newIndex, this.state.sceneIndex);
-    }
-    this.setState({ sceneIndex: newIndex });
+  handleActiveTargetChange(targetIndex) {
+    this.setState({ targetIndex });
   }
 
   render() {
-    const sceneIndex = this.state.sceneIndex;
-    const sceneTotal = this.props.sceneTotal;
-    let leftClass = 'win-cover-scroller-previous';
-    let rightClass = 'win-cover-scroller-next';
-    if (sceneIndex === 0) {
-      leftClass += ' win-cover-scroller-arrow-hidden';
-    } else if (sceneIndex === (sceneTotal - 1)) {
-      rightClass += ' win-cover-scroller-arrow-hidden';
-    }
-
-    let previousArrow = null;
-    let nextArrow = null;
-    let previous = null;
-    let next = null;
-    if (this.props.prevNext === 'arrows') {
-      previousArrow = <Icon icon="left" background={this.props.icon.background} color={this.props.icon.color} />;
-      nextArrow = <Icon icon="right" background={this.props.icon.background} color={this.props.icon.color} />;
-    }
-
-    previous = (
-      <div className={leftClass}
-        key="left"
-        data-move="left"
-        onClick={this.handlePrevNext}
-      >
-        {previousArrow}
-        <span></span>
-      </div>
-    );
-
-    next = (
-      <div className={rightClass}
-        key="right"
-        data-move="right"
-        onClick={this.handlePrevNext}
-      >
-        {nextArrow}
-        <span></span>
-      </div>
-    );
-
-    const index = [];
-    const bodycopy = [];
-    const images = [];
-    if (sceneIndex === 0) {
-      this.props.entries.map((entry, i) => {
-        images.push(
-          <img src={entry.image} key={`image-all-selected-${i}`} className="image--allselected" />
-        );
-      });
-    }
-
-    this.props.entries.map((entry, i) => {
-      let indexClass = null;
-      let bodyClass = null;
-      let imageClass = null;
-      if (i === sceneIndex) {
-        indexClass = 'win-cover-scrollerIndex--selected';
-        bodyClass = 'bodyCopy--selected';
-        imageClass = 'image--selected';
+    const targetIndex = this.state.targetIndex;
+    const currentEntry = this.props.entries[targetIndex];
+    const images = this.props.entries.map((entry, i) => {
+      let imageClass = 'wincover--image';
+      if (targetIndex === 0) {
+        imageClass = 'wincover--image--allselected';
+      } else if (i === targetIndex) {
+        imageClass = 'wincover--image--singleselected';
       }
-
-      index.push(
-        <li
-          key={`list-item-${i}`}
-          data-item-id={i}
-          onClick={this.handleIndexClicked}
-        >
-          <div className={indexClass}>{entry.tabtitle}</div>
-        </li>
-      );
-
-      function bodyCopy() {
-        return {
-          __html: entry.bodycopy //eslint-disable-line
-        };
-      }
-
-      /* eslint-disable react/no-danger */
-      bodycopy.push(
-        <div className={bodyClass} key={`bodycopy-${i}`}>
-          <div dangerouslySetInnerHTML={bodyCopy()}></div>
-          <span className="win-cover-byline">{entry.byline}</span>
-          <div className="win-cover-readmore">
-          <a href={entry.url}>Read more
-            <Icon className="win-cover-readmore-arrow" icon="right"/>
-          </a>
-          </div>
-        </div>
-      );
-      /* eslint-enable react/no-danger */
-
-      images.push(
-        <img src={entry.image} key={`single-image-${i}`} className={imageClass}/>
+      return (
+        <a key={`image-${i}`} href={entry.url} className={imageClass}>
+          <img src={entry.image}/>
+        </a>
       );
     });
-
     return (
-      <div className="win-cover">
-        <div className="win-cover--imagecontainer">
+      <div className="wincover">
+        <div className="wincover--imagecontainer">
           {images}
         </div>
-        <div className="win-cover-scroller">
-          {previous}
-          <div id="scrollcontainer">
-            <ul className="win-cover-scroller--inner">
-              {index}
-            </ul>
-          </div>
-          {next}
+        <div className="wincover--scroller">
+          <Carousel
+            onChangeActiveTarget={this.handleActiveTargetChange}
+            icon={this.props.icon}
+            prevNext={this.props.prevNext}
+            children={this.props.entries.map((entry) => entry.tabtitle)}
+          />
         </div>
-          <div className="win-cover--bodyCopy">
-            {bodycopy}
+          <div className="wincover--body-copy">
+            <a href={currentEntry.url}>
+              <div
+                dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
+                  __html: currentEntry.bodycopy, // eslint-disable-line id-match
+                }}
+              ></div>
+              <span className="wincover-byline">{currentEntry.byline}</span>
+              <div className="wincover-readmore">
+              <span>Read more</span>
+              <Icon className="wincover-readmore-arrow" icon="right"/>
+              </div>
+            </a>
           </div>
         </div>
     );
