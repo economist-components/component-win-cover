@@ -172,7 +172,7 @@
   height: 48px;
   max-width: 40px;
   position: absolute;
-  z-index: 99999;
+  z-index: 1;
 }
 
 .wincover--scroller .carousel--previous-arrow:hover {
