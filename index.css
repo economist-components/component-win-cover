@@ -1,23 +1,5 @@
 @import '@economist/component-font-officina';
 
-@keyframes animationFrames{
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-@keyframes animationFramesOut{
-  0% {
-    opacity:1;
-  }
-  100% {
-    opacity:0;
-  }
-}
-
 .wincover {
   font-family: Officina;
   background-color: #253A43;
@@ -40,9 +22,6 @@
 }
 
 .wincover--image, .wincover--image--singleselected, .wincover--image--allselected {
-  animation: animationFramesOut ease-out 1.0s;
-  animation-iteration-count: 1;
-  animation-fill-mode:forwards;
   position: absolute;
   top: 0;
   left: 0;
@@ -63,16 +42,12 @@
   display: block;
   width: 100%;
   height: auto;
-  animation: animationFrames ease-out 0.5s;
-  animation-iteration-count: 1;
 }
 
 .wincover--image--allselected {
   display: block;
   width: 100%;
   height: auto;
-  animation: animationFrames ease-out 3s;
-  animation-iteration-count: 1;
 }
 
 .wincover--body-copy {

@@ -67,7 +67,8 @@
   "babel": {
     "stage": 0,
     "loose": "all",
-    "compact": false
+    "compact": false,
+    "optional": "runtime"
   },
   "eslintConfig": {
     "extends": [
@@ -170,6 +171,7 @@
   "dependencies": {
     "@economist/component-font-officina": "^1.0.0",
     "@economist/component-icon": "^3.0.2",
+    "babel-runtime": "^6.3.19",
     "ftscroller": "^0.6.2",
     "react-dom": "^0.14.6"
   },
