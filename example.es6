@@ -5,19 +5,19 @@ const entries = [
   {
     tabtitle: '2000',
     title: '00',
-    image: '',
+    clipPath: null,
     bodycopy: `<h2>Welcome...</h2>
     <p>
     To mark the 30th edition of the The World In, we have chosen one article from each
     issue to reflect three decades of forward-thinking.
     </p>`,
-    byline: 'From The World in 2000',
+    byline: 'From The World in 2016',
     url: null,
   },
   {
     tabtitle: '2015',
     title: '01',
-    image: 'assets/13.png',
+    clipPath: 'year2015',
     bodycopy: `<h2>Unfinished business for the world's women</h2>
     <p>
     In 2016 Hillary Clinton could become the first woman to lead the
@@ -31,7 +31,7 @@ const entries = [
   {
     tabtitle: '2014',
     title: '02',
-    image: 'assets/24.png',
+    clipPath: 'year2014',
     bodycopy: `<h2>The Great War</h2>
     <p>
     For the centenary of the outbreak of the first world war in 1914, the only
@@ -44,7 +44,7 @@ const entries = [
   {
     tabtitle: '2013',
     title: '03',
-    image: 'assets/30.png',
+    clipPath: 'year2013',
     bodycopy: `<h2>The lottery of life</h2>
     <p>
     <i>In The World in 1988</i>, The Economist Intelligence Unit (EIU) ranked 50 countries according
@@ -58,7 +58,7 @@ const entries = [
   {
     tabtitle: '2012',
     title: '04',
-    image: 'assets/28.png',
+    clipPath: 'year2012',
     bodycopy: `<h2>Sharing to the power of 2012</h2>
     <p>
     Sheryl Sandberg, chief operating officer of Facebook, predicted that social
@@ -71,7 +71,7 @@ const entries = [
   {
     tabtitle: '2011',
     title: '05',
-    image: 'assets/19.png',
+    clipPath: 'year2011',
     bodycopy: `<h2>Another year, another billion</h2>
     <p>
     The world's population was expected to reach seven billion in 2011. The
@@ -86,7 +86,7 @@ const entries = [
   {
     tabtitle: '2010',
     title: '06',
-    image: 'assets/02.png',
+    clipPath: 'year2010',
     bodycopy: `<h2>Space, the fiscal frontier</h2>
     <p>
     Space may well be the final frontier for disruption. In The World in 2010
@@ -100,7 +100,7 @@ const entries = [
   {
     tabtitle: '2009',
     title: '07',
-    image: 'assets/31.png',
+    clipPath: 'year2009',
     bodycopy: `<h2>About 2008: sorry</h2>
     <p>
     The financial crisis of 2008 caught everyone by surprise—not least, it must
@@ -115,7 +115,7 @@ const entries = [
   {
     tabtitle: '2008',
     title: '08',
-    image: 'assets/18.png',
+    clipPath: 'year2008',
     bodycopy: `<h2>007 in 008</h2>
     <p>
     James Bond, the debonair, fictional creation of Ian Fleming, had much to
@@ -130,7 +130,7 @@ const entries = [
   {
     tabtitle: '2007',
     title: '09',
-    image: 'assets/19.png',
+    clipPath: 'year2007',
     bodycopy: `<h2>Work-life imbalance</h2>
     <p>
     In the 1990s a wonderful new way of working beckoned: a world where it would
@@ -145,7 +145,7 @@ const entries = [
   {
     tabtitle: '2006',
     title: '10',
-    image: 'assets/32.png',
+    clipPath: 'year2006',
     bodycopy: `<h2>Looking back on the future</h2>
     <p>
     For The World In...'s 20th edition, we invited an historian, Niall Ferguson, to take a critical look at our record
@@ -156,7 +156,7 @@ const entries = [
   {
     tabtitle: '2005',
     title: '11',
-    image: 'assets/05.png',
+    clipPath: 'year2005',
     bodycopy: `<h2>The age of phonography</h2>
     <p>
     In 2004 digital cameras outsold film cameras for the first time—but both
@@ -171,7 +171,7 @@ const entries = [
   {
     tabtitle: '2004',
     title: '12',
-    image: 'assets/08.png',
+    clipPath: 'year2004',
     bodycopy: `<h2>A new impetus for old Europe</h2>
     <p>
     The enlargement of the European Union in 2004 was the biggest single
@@ -184,7 +184,7 @@ const entries = [
   {
     tabtitle: '2003',
     title: '13',
-    image: 'assets/13.png',
+    clipPath: 'year2003',
     bodycopy: `<h2>As safe as houses?</h2>
     <p>
     The rise in property prices in many cities across the world made ordinary
@@ -198,7 +198,7 @@ const entries = [
   {
     tabtitle: '2002',
     title: '14',
-    image: 'assets/29.png',
+    clipPath: 'year2002',
     bodycopy: `<h2>Europe's day of change</h2>
     <p>
     The first euro coins and notes started circulating on New Year's Day, 2002.
@@ -212,7 +212,7 @@ const entries = [
   {
     tabtitle: '2001',
     title: '15',
-    image: 'assets/09.png',
+    clipPath: 'year2001',
     bodycopy: `<h2>Where's the world's worst?</h2>
     <p>
     There are many dismal places in which to live, but in 2001 The Economist
@@ -226,7 +226,7 @@ const entries = [
   {
     tabtitle: '2000',
     title: '16',
-    image: 'assets/33.png',
+    clipPath: 'year2000',
     bodycopy: `<h2>Can e-commerce deliver?</h2>
     <p>
     Peter Drucker, the grandee of management science, took an early look at the disruptive power of e-commerce.
@@ -237,7 +237,7 @@ const entries = [
   {
     tabtitle: '1999',
     title: '17',
-    image: 'assets/22.png',
+    clipPath: 'year1999',
     bodycopy: `<h2>The empire of democracy</h2>
     <p>
     NATO's first, tentative intervention in Kosovo in 1998 defied prevailing rules
@@ -251,7 +251,7 @@ const entries = [
   {
     tabtitle: '1998',
     title: '18',
-    image: 'assets/03.png',
+    clipPath: 'year1998',
     bodycopy: `<h2>The Web lifestyle</h2>
     <p>
     Writing for The World in 1998, Microsoft's chairman. Bill Gates, forecast
@@ -264,7 +264,7 @@ const entries = [
   {
     tabtitle: '1997',
     title: '19',
-    image: 'assets/14.png',
+    clipPath: 'year1997',
     bodycopy: `<h2>Hong Kong, July 1st</h2>
     <p>
     On June 30th 1997 Britain handed Hong Kong back to China. In The World in 1997,
@@ -277,7 +277,7 @@ const entries = [
   {
     tabtitle: '1996',
     title: '20',
-    image: 'assets/20.png',
+    clipPath: 'year1996',
     bodycopy: `<h2>A Labour Britain's promise</h2>
     <p>
     The World in 1996 asked Tony Blair, then Britain's opposition leader, to spell
@@ -289,7 +289,7 @@ const entries = [
   {
     tabtitle: '1995',
     title: '21',
-    image: 'assets/06.png',
+    clipPath: 'year1995',
     bodycopy: `<h2>In search of craziness</h2>
     <p>
     Tom Peters, a management guru, made a plea for businesses to embrace the
@@ -301,7 +301,7 @@ const entries = [
   {
     tabtitle: '1994',
     title: '22',
-    image: 'assets/27.png',
+    clipPath: 'year1994',
     bodycopy: `<h2>Join the derivatives club</h2>
     <p>
     Financial derivatives had swept the markets and baffled regulators and even
@@ -315,7 +315,7 @@ const entries = [
   {
     tabtitle: '1993',
     title: '23',
-    image: 'assets/01.png',
+    clipPath: 'year1993',
     bodycopy: `<h2>New people, new vigour, old ideas</h2>
     <p>
     The Clintonian era began with the inauguration of Bill Clinton as the 42nd
@@ -329,7 +329,7 @@ const entries = [
   {
     tabtitle: '1992',
     title: '25',
-    image: 'assets/23.png',
+    clipPath: 'year1992',
     bodycopy: `<h2>And now for the next 500 years</h2>
     <p>
     Paul Kennedy, a professor of history at Yale University, asked where America
@@ -341,7 +341,7 @@ const entries = [
   {
     tabtitle: '1991',
     title: '26',
-    image: 'assets/26.png',
+    clipPath: 'year1991',
     bodycopy: `<h2>The next big bust</h2>
     <p>
     Following the crash of the Japan's stockmarket in 1990,
@@ -354,7 +354,7 @@ const entries = [
   {
     tabtitle: '1990',
     title: '27',
-    image: 'assets/21.png',
+    clipPath: 'year1990',
     bodycopy: `<h2>After communism</h2>
     <p>
     The collapse of communism in 1989 created an entirely new political and
@@ -368,7 +368,7 @@ const entries = [
   {
     tabtitle: '1989',
     title: '28',
-    image: 'assets/20.png',
+    clipPath: 'year1989',
     bodycopy: `<h2>The World in 1989...and on to the 1990s</h2>
     <p>
     As a new decade loomed, Mary Goldring, editor of The World in 1989, took a
@@ -381,7 +381,7 @@ const entries = [
   {
     tabtitle: '1988',
     title: '29',
-    image: 'assets/11.png',
+    clipPath: 'year1988',
     bodycopy: `<h2>AIDS casts a dark shadow</h2>
     <p>
     Matt Ridley, then The Economist's Washington correspondent, speculated on
@@ -394,7 +394,7 @@ const entries = [
   {
     tabtitle: '1987',
     title: '30',
-    image: 'assets/15.png',
+    clipPath: 'year1987',
     bodycopy: `<h2>The World in 1987: A political outlook</h2>
     <p>
     In the first edition of The World In..., Andrew Boyd, who wrote on foreign

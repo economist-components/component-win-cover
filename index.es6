@@ -1,6 +1,7 @@
 import React from 'react';
 import Icon from '@economist/component-icon';
 import Carousel from './carousel';
+import { findDOMNode } from 'react-dom'; // eslint-disable-line id-match
 
 export default class WinCover extends React.Component {
 
@@ -37,30 +38,25 @@ export default class WinCover extends React.Component {
   }
 
   handleActiveTargetChange(targetIndex) {
+    const topImage = findDOMNode(this.refs.svgObject).contentDocument.getElementById('top');
+    topImage.style.clipPath = `url(#${this.props.entries[targetIndex].clipPath})`;
     this.setState({ targetIndex });
   }
 
   render() {
     const targetIndex = this.state.targetIndex;
     const currentEntry = this.props.entries[targetIndex];
-    const images = this.props.entries.map((entry, i) => {
-      let imageClass = 'wincover--image';
-      if (targetIndex === 0) {
-        imageClass = 'wincover--image--allselected';
-      } else if (i === targetIndex) {
-        imageClass = 'wincover--image--singleselected';
-      }
-      return (
-        <a key={`image-${i}`} href={entry.url} className={imageClass}>
-          <img src={entry.image}/>
-        </a>
-      );
-    });
     return (
       <div className="wincover">
-        <div className="wincover--imagecontainer">
-          {images}
+      <a href={currentEntry.url}>
+        <div className="wincover--object--container">
+        <object className="wincover--object" ref="svgObject" data="/assets/cover.svg"
+          type="image/svg+xml"
+        >
+        </object>
         </div>
+      </a>
+
         <div className="wincover--scroller">
           <Carousel
             onChangeActiveTarget={this.handleActiveTargetChange}

@@ -10,44 +10,49 @@
   user-select: none;
 }
 
-.wincover--imagecontainer {
-  display: flex;
-  width: 100%;
-  position: relative;
-  padding-top: 56.25%;
-  background-image: url(/assets/cover_bg.jpg);
-  background-size: 100%;
-  background-repeat: no-repeat;
+.wincover--object--container {
+  background-color: #000;
+  max-width: 1190px;
+  max-height: 674px;
   overflow: hidden;
+  position: relative;
 }
 
-.wincover--image, .wincover--image--singleselected, .wincover--image--allselected {
+.wincover--object--container:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.wincover object  {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
-  height: auto;
-  display: none;
 }
 
-.wincover--image > img,
-.wincover--image--singleselected > img,
- .wincover--image--allselected > img {
-  width: 100%;
+.wincover object {
+  pointer-events: none;
 }
 
-.wincover--image--singleselected {
+
+.sixteen-nine {
+  position: relative;
+}
+.sixteen-nine:before {
   display: block;
+  content: "";
   width: 100%;
-  height: auto;
+  padding-top: 56.25%;
 }
-
-.wincover--image--allselected {
-  display: block;
-  width: 100%;
-  height: auto;
+.sixteen-nine > .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .wincover--body-copy {
@@ -235,6 +240,15 @@
 
 @media only screen and (max-width: 780px) {
 
+  .wincover--object--container:before {
+    padding-top: 84%;
+  }
+
+  .wincover object {
+    transform: scale(1.5);
+    top: 16%;
+  }
+
   .wincover--scroller::before,
   .wincover--scroller::after {
     content: "";
@@ -264,24 +278,6 @@
 
   .wincover--scroller .carousel--element:last-child {
     padding-right: 0;
-  }
-
-
-  .wincover--imagecontainer {
-    padding-top: 89%;
-    background-size: auto 100%;
-    background-position: 46% 0;
-  }
-
-  .wincover--image, .wincover--image--singleselected, .wincover--image--allselected {
-    width: auto;
-  }
-
-  .wincover--image > img,
-  .wincover--image--singleselected > img,
-   .wincover--image--allselected > img {
-    width: 158%;
-    transform: translateX(-17%);
   }
 
   .wincover--body-copy {
